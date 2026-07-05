@@ -34,6 +34,10 @@ if [ -z "$MEMORY_DIR" ]; then
   exit 2
 fi
 
+# Normalize to exactly one trailing slash so the prefix check matches a
+# directory boundary, not a string prefix (/foo/memory vs /foo/memory-backup).
+MEMORY_DIR="${MEMORY_DIR%/}/"
+
 if [[ "$FILE_PATH" != "$MEMORY_DIR"* ]]; then
   echo "Blocked: this agent may only modify files in the memory directory ($MEMORY_DIR)." >&2
   exit 2
@@ -41,4 +45,4 @@ fi
 
 exit 0
 
-# Version 1.0
+# Version 1.1

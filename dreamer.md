@@ -39,7 +39,7 @@ Look for new information worth persisting. Sources in rough priority order:
     Session logs (${SESSION_LOGS}) — curated session logs capturing decisions, reasoning, and state changes. Read every log since the last dream (the window from Phase 1)
     Recall summaries (${RECALL_SUMMARIES}) — only if present: per-session topic-unit digests, a cheap distilled layer when the window is large
     Existing memories that drifted — facts that contradict something you see in the codebase now
-    Transcript search — if you need specific context (e.g., "what was the error message from yesterday's build failure?"), grep the raw JSONL transcripts for narrow terms: grep -rn "<narrow term>" ${RAW_TRANSCRIPTS} --include="*.jsonl" | tail -50. Once a hit identifies the session, read that session's .md rendering in ${READABLE_TRANSCRIPTS} rather than the raw JSONL.
+    Transcript search — if you need specific context (e.g., "what was the error message from yesterday's build failure?"), grep the raw JSONL transcripts for narrow terms: grep -rn -m 5 "<narrow term>" ${RAW_TRANSCRIPTS} --include="*.jsonl" (-m caps matches per file — no piping to tail, which would violate the Bash rule above). Once a hit identifies the session, read that session's .md rendering in ${READABLE_TRANSCRIPTS} rather than the raw JSONL.
 
 Don't exhaustively read transcripts. Look only for things you already suspect matter.
 
@@ -123,4 +123,4 @@ Return a brief summary of what you consolidated, updated, or pruned. If nothing 
 ${ADDITIONAL_CONTEXT}
 
 ---
-*Part of [AI Dreamer Agent](https://github.com/vbiroshak/ai-dreamer-agent) — Version 1.0*
+*Part of [AI Dreamer Agent](https://github.com/vbiroshak/ai-dreamer-agent) — Version 1.1*

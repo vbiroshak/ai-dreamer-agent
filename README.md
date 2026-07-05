@@ -25,7 +25,7 @@ Replace these in `dreamer.md` before installing. The table shows what each varia
 | `${MODEL}` | Claude model to run the agent on | `claude-opus-4-6` |
 | `${EFFORT}` | Reasoning effort level | `medium` |
 | `${HOOK_PATH}` | Absolute path to `dreamer-guard.sh` on your machine | `~/.claude/hooks/dreamer-guard.sh` |
-| `${MEMORY_DIR}` | Directory where memory files live. Default: `~/.claude/projects/<project>/memory/`; overridden by `autoMemoryDirectory` in `.claude/settings.json` | `Project/Claude Memory/` |
+| `${MEMORY_DIR}` | Directory where memory files live, **with a trailing slash** (the prompt concatenates filenames onto it). Default: `~/.claude/projects/<project>/memory/`; overridden by `autoMemoryDirectory` in `.claude/settings.json` | `Project/Claude Memory/` |
 | `${MEMORY_INDEX}` | Filename of the memory index inside the memory directory | `MEMORY.md` |
 | `${INDEX_MAX_LINES}` | Maximum lines for the memory index (Claude's context loads it every turn) | `200` |
 | `${SESSION_LOGS}` | Directory of curated session logs (one file per session, decisions and state changes) | `Project/Session Logs/` |
@@ -39,7 +39,7 @@ Replace these in `dreamer.md` before installing. The table shows what each varia
 
 - Claude Code with agent support
 - `jq` installed (used by the guard hook)
-- Auto memory enabled (default) — the guard hook finds the memory directory automatically, or reads `autoMemoryDirectory` from `.claude/settings.json` if you've redirected it
+- Auto memory enabled (default) — the guard hook reads `autoMemoryDirectory` from `.claude/settings.json` if you've redirected memory, otherwise it derives the default location automatically
 - Session logs that the agent can read for recent signal
 
 ## How it works
@@ -67,4 +67,4 @@ The memory-consolidation ("dream") behavior this agent implements is adapted fro
 [MIT](LICENSE)
 
 ---
-*Part of [AI Dreamer Agent](https://github.com/vbiroshak/ai-dreamer-agent) — Version 1.0*
+*Part of [AI Dreamer Agent](https://github.com/vbiroshak/ai-dreamer-agent) — Version 1.1*
