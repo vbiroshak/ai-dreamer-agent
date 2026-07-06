@@ -67,4 +67,4 @@ The memory-consolidation ("dream") behavior this agent implements is adapted fro
 [MIT](LICENSE)
 
 ---
-*Part of [AI Dreamer Agent](https://github.com/vbiroshak/ai-dreamer-agent) — Version 1.1*
+*Part of [AI Dreamer Agent](https://github.com/vbiroshak/ai-dreamer-agent) — Version 1.2*

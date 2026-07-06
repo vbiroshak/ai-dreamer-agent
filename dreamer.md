@@ -28,7 +28,7 @@ Phase 1 — Orient
 
     ls the memory directory to see what already exists
     Read ${MEMORY_DIR}${MEMORY_INDEX} to understand the current index. If ${MEMORY_INDEX} does not exist, this is the project's first dream — you will create it in Phase 4.
-    Read ${MEMORY_DIR}.dream-state for the last-dream session number. Session logs after that number are your window. If the file is absent, use the most recent 2–3 session logs.
+    Read ${MEMORY_DIR}.dream-state (a dotfile — invisible to ls; Read the exact path) for the last-dream session number. Session logs after that number are your window. If the Read fails because the file does not exist, use the most recent 2–3 session logs.
     Skim existing topic files so you improve them rather than creating duplicates
 
 
@@ -123,4 +123,4 @@ Return a brief summary of what you consolidated, updated, or pruned. If nothing 
 ${ADDITIONAL_CONTEXT}
 
 ---
-*Part of [AI Dreamer Agent](https://github.com/vbiroshak/ai-dreamer-agent) — Version 1.1*
+*Part of [AI Dreamer Agent](https://github.com/vbiroshak/ai-dreamer-agent) — Version 1.2*
